@@ -1,443 +1,400 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio Saya</title>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otomasi Industri, Mesin Otomatis, Jasa Fabrikasi Sparepart | TADI</title>
+    <meta name="description" content="Kami adalah perusahaan otomasi industri yang menyediakan pembuatan mesin baru, modifikasi mesin manual menjadi otomatis, dan jasa fabrikasi sparepart.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              poppins: ["Poppins", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      body,
-      html {
-        overflow-x: hidden;
-      }
-      .carousel-container {
-        position: relative;
-        overflow: hidden;
-      }
-      .carousel-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-      .carousel-slide {
-        min-width: 100%;
-        flex-shrink: 0;
-      }
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .custom-purple {
+            background: linear-gradient(135deg, #B9A0E0 0%, #8B5CF6 100%);
+        }
+        
+        .nav-sticky {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 243, 202, 0.9);
+        }
     </style>
-  </head>
-  <body class="bg-black text-white scroll-smooth overflow-x-hidden font-poppins">
-    <!-- Background Effects -->
-    <div class="absolute inset-0 z-10 overflow-hidden">
-      <div class="fixed -top-10 -right-10 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-pulse"></div>
-      <div class="fixed top-40 right-100 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-pulse"></div>
-      <div class="fixed -top-50 right-50 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-pulse"></div>
-    </div>
-
-    <!-- Navbar -->
-    <header class="fixed top-0 w-full bg-black/20 backdrop-blur-md border-b border-sky-400/20 z-50">
-      <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16 lg:h-20">
-          <!-- Logo -->
-          <div class="flex-shrink-0">
-            <h1 class="text-sky-400 text-xl sm:text-2xl font-bold [text-shadow:0_0_10px_rgb(56_189_248)]"><span class="text-white">Raj Rizki</span> Jaya Sontani</h1>
-          </div>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden md:block">
-            <ul class="flex space-x-8 text-white">
-              <li><a href="#home" class="hover:text-sky-400 transition-colors duration-300 text-sm lg:text-base">Home</a></li>
-              <li><a href="#about" class="hover:text-sky-400 transition-colors duration-300 text-sm lg:text-base">About</a></li>
-              <li><a href="#projects" class="hover:text-sky-400 transition-colors duration-300 text-sm lg:text-base">Projects</a></li>
-              <li><a href="#contact" class="hover:text-sky-400 transition-colors duration-300 text-sm lg:text-base">Contact</a></li>
-            </ul>
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-white hover:text-sky-400 transition-colors duration-300">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4">
-          <ul class="flex flex-col space-y-3 text-white">
-            <li><a href="#home" class="block hover:text-sky-400 transition-colors duration-300 py-2">Home</a></li>
-            <li><a href="#about" class="block hover:text-sky-400 transition-colors duration-300 py-2">About</a></li>
-            <li><a href="#projects" class="block hover:text-sky-400 transition-colors duration-300 py-2">Projects</a></li>
-            <li><a href="#contact" class="block hover:text-sky-400 transition-colors duration-300 py-2">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main class="relative z-10 justify-start">
-      <!-- Hero/About Section -->
-      <section id="home" class="min-h-screen flex items-center bg-cover bg-center justify-center px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 relative">
-        <div class="absolute inset-0 bg-[url('/img/background.jpg')] bg-cover bg-center bg-no-repeat -z-10 h-screen"></div>
-
-        <div class="container mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center text-center md:text-lef">
-            <div class="text-center lg:text-left max-w-2xl mx-auto lg:mx-0" data-aos="fade-right">
-              <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold [text-shadow:0_0_10px_rgb(56_189_248)] text-sky-400 mb-6">Introducing</h2>
-              <p class="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed mb-4">
-                Saya adalah seorang <span class="text-base sm:text-lg lg:text-xl italic leading-relaxed">fresh graduate</span> dengan ambisi dan cita-cita yang tinggi dan juga semangat belajar yang kuat.
-              </p>
-              <p class="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed">"Belajar itu tak kenal batas, sepanjang hidup Anda harus belajar."</p>
-              <p class="mb-8 text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed text-end">— Bacharuddin Jusuf Habibie.</p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
-                <a href="/img/CV.pdf"><button class="bg-sky-400 text-black font-semibold px-8 py-3 rounded-full hover:bg-sky-300 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sky-400/25">Download CV</button></a>
-                <a href="#projects"><button class="border-2 border-sky-400 text-sky-400 font-semibold px-8 py-3 rounded-full hover:bg-sky-400 hover:text-black transition-all duration-300 transform hover:scale-105">View Projects</button></a>
-              </div>
-
-              <div>
-                <p class="text-gray-400 text-sm mb-4">Skill Stack:</p>
-                <div class="flex flex-wrap gap-3 justify-center lg:justify-start z-50">
-                  <span class="bg-gray-800/50 text-sky-400 px-3 py-1 rounded-full text-sm border border-sky-400/20 cursor-pointer hover:bg-sky-400/10 transition-colors">Accounting</span>
-                  <span class="bg-gray-800/50 text-sky-400 px-3 py-1 rounded-full text-sm border border-sky-400/20 cursor-pointer hover:bg-sky-400/10 transition-colors">Website Development</span>
-                  <span class="bg-gray-800/50 text-sky-400 px-3 py-1 rounded-full text-sm border border-sky-400/20 cursor-pointer hover:bg-sky-400/10 transition-colors">Copywriting</span>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                        <img src="/img/TADI Color (Text Alt) - Transparent.png" alt="">
+                    </div>
+                    <span class="text-xl text-gray-800">PT. Teknik Andalan Digitalisasi Indonesia</span>
+                </div>
                 
-                  <span class="bg-gray-800/50 text-sky-400 px-3 py-1 rounded-full text-sm border border-sky-400/20 cursor-pointer hover:bg-sky-400/10 transition-colors">Electronics Repair (Home Appliances & Gadgets)</span>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-purple-600  font-medium">Beranda</a>
+                    <div class="relative group">
+                        <a href="#services" class="text-gray-800 hover:text-purple-600 font-medium flex items-center">
+                            Layanan <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan dan Fabrikasi Sparepart</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Penggantian PLC</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Rekondisi dan Modifikasi Mesin</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pembuatan SCADA</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan Mesin Baru</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="text-gray-800 hover:text-purple-600 font-medium">Tentang Kami</a>
+                    <a href="#contact" class="text-gray-800 hover:text-purple-600 font-medium">Kontak</a>
                 </div>
-              </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-800 text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-
-            <div class="flex justify-center lg:justify-end pr-20">
-              <div class="relative group">
-                <div data-aos="fade-up" data-aos-delay="100" class="hidden md:block w-[500px] h-[500px]">
-                  <dotlottie-player src="https://lottie.host/f96faaf1-02a5-480c-991a-f71f0a9416bb/ILzzv2ccUT.lottie" background="transparent" speed="1" style="width: 500px; height: 500px" loop autoplay></dotlottie-player>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <div class="bg-white rounded-lg shadow-lg py-4">
+                    <a href="#home" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Beranda</a>
+                    <a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Layanan</a>
+                    <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tentang Kami</a>
+                    <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Kontak</a>
                 </div>
-                <div class="absolute top-40 -right-4 w-8 h-8 bg-sky-400 rounded-full blur-sm opacity-60 animate-bounce"></div>
-                <div class="absolute -bottom-6 -left-6 w-6 h-6 bg-sky-300 rounded-full blur-sm opacity-40 animate-bounce" style="animation-delay: 0.5s"></div>
-                <div class="absolute top-40 -right-100 w-8 h-8 bg-sky-400 rounded-full blur-sm opacity-60 animate-bounce"></div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </nav>
 
-      <section id="about" class="py-16 lg:py-24">
-        <div class="container mx-auto px-4 text-center mb-12" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 [text-shadow:0_0_10px_rgb(56_189_248)]">Tentang Saya</h2>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative 
+         bg-[url('/img/background.jpg')]
+         sm:bg-[url('/img/background.jpg')]
+         lg:bg-[url('/img/background.jpg')]
+         bg-cover bg-center bg-no-repeat">
+        <div class="container mx-auto px-4 text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Solusi Mesin Industri Terpercaya
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda
+                </p>
+                <a href="#contact" class="inline-block custom-purple text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
+                    Hubungi Kami
+                </a>
+            </div>
         </div>
-
-        <div class="container mx-auto px-4" data-aos="fade-up">
-          <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
-            <div class="lg:w-1/3 flex justify-center">
-              <img src="/img/gua di ragunan.jpg" class="w-full max-w-sm rounded-3xl shadow-lg object-cover" alt="Profile Image" data-aos="fade-right" data-aos-delay="300" />
-            </div>
-
-            <div class="lg:w-2/3 space-y-6">
-              <h2 class="text-2xl md:text-3xl font-bold text-white" data-aos="fade-right">Latar Belakang &amp; Biodata</h2>
-
-              <p class="text-white py-3 leading-relaxed" data-aos="fade-right" data-aos-delay="200">
-                Saya Raj Rizki Jaya Sontani, seseorang yang memiliki ketertarikan di bidang teknis, terutama dalam hal perbaikan dan pemahaman perangkat elektronik. Saya terbiasa bekerja secara teliti, mampu berpikir logis dalam menyelesaikan masalah, dan cepat beradaptasi dalam lingkungan kerja. Selain itu, saya selalu terbuka untuk belajar hal baru dan mengembangkan keterampilan yang saya miliki.
-
-
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div>
-                  <ul class="space-y-3" data-aos="fade-right" data-aos-delay="300">
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">Nama :</strong>
-                      <span class="text-white"> Raj Rizki Jaya Sontani</span>
-                    </li>
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">TTL :</strong>
-                      <span class="text-white">Subang, 2 Juni 2008</span>
-                    </li>
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">Kontak :</strong>
-                      <span class="text-white">+62 851-7524-0839</span>
-                    </li>
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">Alamat :</strong>
-                      <span class="text-white">Kp.Pedurenan, Jatiash, Kota Bekasi</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <ul class="space-y-3" data-aos="fade-left" data-aos-delay="400">
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">Asal Sekolah :</strong>
-                      <span class="text-white">SMK Persada Husada Indonesia</span>
-                    </li>
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">Jurusan :</strong>
-                      <span class="text-white">Teknik Komputer dan Jaringan</span>
-                    </li>
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">Email :</strong>
-                      <span class="text-white">rajrizkijaya@gmail.com</span>
-                    </li>
-                    <li class="flex items-center">
-                      <i class="bi bi-chevron-right text-white mr-2"></i>
-                      <strong class="text-white mr-2">LinkedIn :</strong>
-                      <span class="text-white font-medium">Raj Rizki Jaya Sontani</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <p class="pt-3 text-white leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-                Saya memiliki hobi membaca buku, terutama yang bertema pengembangan diri (self-improvement) dan filsafat. Saya juga senang mempelajari hal-hal baru seputar pengetahuan umum serta berbagai keterampilan baru. Pada intinya,
-                hobi saya tidak lain adalah belajar.
-              </p>
-              <p class="pb-3 text-white leading-relaxed" data-aos="fade-up" data-aos-delay="400">"Belajar adalah alasan saya hidup, dan saya terus hidup untuk terus belajar."</p>
-            </div>
-          </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
+            <i class="fas fa-chevron-down animate-bounce text-2xl"></i>
         </div>
-      </section>
+    </section>
 
-      
-
-      <!-- Projects Section -->
-      <section id="projects" class="py-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-4xl font-bold text-sky-400 mb-12">Projects</h2>
-
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-sky-400/25 transition-all duration-300 transform hover:scale-105 border border-gray-700/50">
-              <img src="" alt="" />
-              <p class="text-gray-300 text-xl pb-4">Simple Template Landing Page for Online Shop</p>
-              <img src="/img/template.png" alt="" class="rounded-2xl" />
-              <p class="text-gray-300 pt-8">Menyediakan Template Gratis untuk UMKM atau pelaku usaha yang ingin memperluas pasar melalui website</p>
-              <a href="https://toko-keren-e6ceylr0e-iyas-projects-3a115863.vercel.app/"> <button class="m-4 bg-sky-400 rounded-lg p-4">Lihat Sekarang</button></a>
-            </div>
-            <div class="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-sky-400/25 transition-all duration-300 transform hover:scale-105 border border-gray-700/50">
-              <h3 class="text-xl font-semibold mb-2">E-Book</h3>
-              <img src="/img/ebook.jpeg" alt="" class="rounded-2xl" />
-              <div class="m-4 bg-sky-400 rounded-lg p-4 mt-32">On Progress..</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="sertifikasi" class="py-16">
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-          <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">Sertifikasi Saya</h2>
-      
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-              <img class="w-full h-48 object-cover" src="/img/certificate.png" alt="Nama Sertifikasi 1">
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Certificate of Completion.</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Dikeluarkan oleh: Speaking Partner by Kampung Inggris</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="float-animation">
+                    <div class="w-full h-96 bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <i class="fas fa-cogs text-8xl mb-4"></i>
+                            <h3 class="text-2xl font-bold">TADI LOGO</h3>
+                        </div>
+                    </div>
+                </div>
                 
-                <a href="/img/Raj Rizki Jaya Sontani (1).pdf" class="inline-block mt-4 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500 font-medium">Lihat Kredensial</a>
-              </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-gray-800">
+                        Tentang Kami - TADI
+                    </h2>
+                    <div class="space-y-4 text-gray-600 text-lg">
+                        <p>
+                            Kami adalah perusahaan yang menyediakan sparepart berkualitas dan layanan konsultasi teknik untuk industri anda dengan komitmen <strong>"setiap suku cadang dan mesin yang kami sediakan pasti aman dari TADI"</strong>
+                        </p>
+                        <p>
+                            Kami mendukung industri dengan solusi yang tepat dan terpercaya untuk menjaga performa serta keselamatan operasional peralatan anda.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-block mt-6 border-2 border-gray-800 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300">
+                        Hubungi Kami
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800">
+                    Layanan Otomasi Industri
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Kami menyediakan solusi otomasi untuk mesin baru dan modifikasi mesin manual menjadi otomatis
+                </p>
+            </div>
             
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-              <img class="w-full h-48 object-cover" src="/img/certificate 2.png" alt="Nama Sertifikasi 1">
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Sertifikat PKL</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Dikeluarkan oleh: CV. Karya Electric</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Industrial Image Placeholder -->
+                <div class="order-2 md:order-1">
+                    <div class="w-full h-80 bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <i class="fas fa-industry text-6xl mb-4"></i>
+                            <p class="text-lg">Industrial Automation Image</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <a href="/img/certificate 2" class="inline-block mt-4 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500 font-medium">Lihat Kredensial</a>
-              </div>
-            
-      
-            
+                <div class="order-1 md:order-2 space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Fabrikasi Sparepart Custom</h3>
+                        <p class="text-gray-600">Kami menyediakan sparepart untuk semua mesin, baik standar maupun custom sesuai permintaan.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Pembuatan Mesin Baru</h3>
+                        <p class="text-gray-600">Kami merancang dan memproduksi mesin baru sesuai kebutuhan industri Anda.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Modifikasi Mesin Manual</h3>
+                        <p class="text-gray-600">Ubah mesin manual Anda menjadi otomatis dengan teknologi terbaru dan efisien.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-<!--Dokumentasi-->
-
-      <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 [text-shadow:0_0_10px_rgb(56_189_248)] text-center" data-aos="fade-up" data-aos-delay="100">Dokumentasi</h1>
-      <div class="min-h-screen flex items-center justify-center p-2 sm:p-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="max-w-4xl w-full bg-white/10 backdrop-blur-lg rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20">
-          <!-- Main Carousel -->
-          <div class="carousel-container relative h-64 sm:h-80 md:h-96 lg:h-[500px]">
-            <!-- Photos Track -->
-            <div id="carouselTrack" class="carousel-track h-full">
-              <!-- Slide 1 -->
-              <div class="carousel-slide relative">
-                <img src="/img/jualan.jpg" alt="Mountain Sunrise" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="carousel-slide relative">
-                <img src="/img/pkl.jpg" alt="Serene Lake" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="carousel-slide relative">
-                <img src="/img/masa-akhir-pkl.jpg" alt="Forest Path" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
-
-
-            <!-- Navigation Arrows -->
-            <button
-              id="prevBtn"
-              class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50 z-10"
-            >
-              <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-
-            <button
-              id="nextBtn"
-              class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50 z-10"
-            >
-              <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-
-            <!-- Slide Counter -->
-            <div id="slideCounter" class="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/50 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm z-10">1 / 4</div>
-          </div>
-
-          <!-- Dot Indicators -->
-          <div class="flex justify-center gap-2 sm:gap-3 py-4 sm:py-6 bg-white/5 backdrop-blur-sm">
-            <button class="dot w-3 h-3 rounded-full bg-white scale-125 shadow-lg transition-all duration-300 focus:outline-none" data-slide="0"></button>
-            <button class="dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 focus:outline-none" data-slide="1"></button>
-            <button class="dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 focus:outline-none" data-slide="2"></button>
-            <button class="dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 focus:outline-none" data-slide="3"></button>
-          </div>
-
-          <!-- Photo Description -->
-          <div class="p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-sm text-center">
-            <h3 id="photoTitle" class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 transition-all duration-500">Mountain Sunrise</h3>
-            <p id="photoDescription" class="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed transition-all duration-500">
-              A breathtaking view of the mountains during golden hour, where nature displays its most magnificent colors.
-            </p>
-          </div>
-
-          <!-- Progress Bar -->
-          <div class="h-1 bg-white/10">
-            <div id="progressBar" class="h-full bg-gradient-to-r from-pink-500 to-violet-500 transition-all duration-700 ease-out" style="width: 25%"></div>
-          </div>
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800">Galeri Proyek</h2>
+                <p class="text-xl text-gray-600">Lihat berbagai mesin otomatis dan sparepart yang kami buat</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Gallery Items -->
+                <div class="group cursor-pointer">
+                    <div class="w-full h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <i class="fas fa-tools text-4xl mb-2"></i>
+                                <p>Industrial Tools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group cursor-pointer">
+                    <div class="w-full h-64 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <i class="fas fa-cogs text-4xl mb-2"></i>
+                                <p>Automation System</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group cursor-pointer">
+                    <div class="w-full h-64 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <i class="fas fa-microchip text-4xl mb-2"></i>
+                                <p>Control Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group cursor-pointer">
+                    <div class="w-full h-64 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <i class="fas fa-robot text-4xl mb-2"></i>
+                                <p>Robotics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      
-      <!-- Contact Section -->
-      <section id="contact" class="py-20">
-        <div class="container mx-auto px-6 text-center">
-          <h2 class="text-4xl font-extrabold text-sky-400 mb-6">Mari Terhubung!</h2>
-          <p class="text-xl text-sky-400 max-w-2xl mx-auto mb-12">
-            Saya selalu terbuka untuk kolaborasi, pertanyaan, atau sekadar obrolan. Jangan ragu untuk menjangkau saya melalui platform favoritmu!
-          </p>
-      
-          <div class="flex flex-wrap justify-center gap-10">
-            <a
-              href="https://www.linkedin.com/in/raj-rizki-jaya-sontani-496a17362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-64"
-            >
-              <i class="fab fa-linkedin text-blue-700 text-6xl mb-4 transition-transform duration-300 group-hover:scale-110"></i>
-              <span class="text-2xl font-semibold text-gray-800 group-hover:text-blue-700 transition-colors duration-300">
-                LinkedIn
-              </span>
-              <p class="text-sm text-gray-500 mt-1">Profil Profesional</p>
-            </a>
-      
-            <a
-              href="https://wa.me/qr/A3VXCP6OILHJL1 "
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-64"
-            >
-              <i class="fab fa-whatsapp text-green-600 text-6xl mb-4 transition-transform duration-300 group-hover:scale-110"></i>
-              <span class="text-2xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                WhatsApp
-              </span>
-              <p class="text-sm text-gray-500 mt-1">Pesan Langsung</p>
-            </a>
-      
-            <a
-              href="https://www.instagram.com/neohuman._/profilecard/?igsh=MW5teTVybjc1a2Y2Mg=="
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-64"
-            >
-              <i class="fab fa-instagram text-purple-600 text-6xl mb-4 transition-transform duration-300 group-hover:scale-110"></i>
-              <span class="text-2xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
-                Instagram
-              </span>
-              <p class="text-sm text-gray-500 mt-1">Galeri & Update</p>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer class="text-center py-6 bg-black/50 border-t border-sky-400/20 text-gray-400">© 2025 Portofolio Saya. All rights reserved.</footer>
+    <footer id="contact" class="bg-purple-800 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">TADI</h3>
+                    <p class="text-purple-200 mb-4">Teknik Andalan Digitalisasi Indonesia</p>
+                    <p class="text-sm text-purple-300">Spesialis Sparepart dan Konsultasi Teknik</p>
+                    
+                    <!-- Social Media -->
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+                    <div class="space-y-3">
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            +628561182716 - Dean
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            +6281553361953 - Abdul
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            info@taditeknik.com
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm mb-2">Masukkan alamat email Anda</label>
+                            <input 
+                                type="email" 
+                                placeholder="Email Anda di sini" 
+                                class="w-full px-4 py-2 rounded-lg border border-purple-600 bg-white text-gray-800 focus:outline-none focus:border-purple-400"
+                                required
+                            >
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full custom-purple py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300"
+                        >
+                            Kirim permintaan Anda
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-purple-700 pt-8 mt-12 text-center">
+                <p class="text-purple-300 text-sm">© 2024. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- JavaScript -->
     <script>
-      // Mobile menu toggle
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Close mobile menu when clicking on a link
-      const mobileLinks = mobileMenu.querySelectorAll("a");
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-      });
 
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('nav-sticky');
+            } else {
+                navbar.classList.remove('nav-sticky');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
             });
-          }
         });
-      });
-      AOS.init();
-    </script>
-    <script src="dokumentasi.js"></script>
-  </body>
-</html>
 
+        // Form submission
+        document.querySelector('footer form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Terima kasih! Permintaan Anda telah dikirim.');
+                this.reset();
+            }
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Hero section is immediately visible
+        document.getElementById('home').style.opacity = '1';
+        document.getElementById('home').style.transform = 'translateY(0)';
+    </script>
+</body>
+</html>
