@@ -7,6 +7,22 @@
     <meta name="description" content="Kami adalah perusahaan otomasi industri yang menyediakan pembuatan mesin baru, modifikasi mesin manual menjadi otomatis, dan jasa fabrikasi sparepart." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              oswald: ['Oswald', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
     <style>
       .glass-effect {
         backdrop-filter: blur(10px);
@@ -43,7 +59,7 @@
       }
     </style>
   </head>
-  <body class="font-sans">
+  <body class="font-poppins smooth overflow-x-hidden">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/20 shadow-md transition-all duration-300" id="navbar">
       <div class="container mx-auto px-4 py-4">
@@ -69,7 +85,14 @@
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan Mesin Baru</a>
               </div>
             </div>
-            <a href="#about" class="text-gray-800 hover:text-purple-600 font-medium">Tentang Kami</a>
+            <div class="relative group">
+              <a href="#services" class="text-gray-800 hover:text-purple-600 font-medium flex items-center"> Tentang Kami <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
+              <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Visi & Misi</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sejarah Perusahaan</a>
+              </div>
+            </div>
             <a href="#contact" class="text-gray-800 hover:text-purple-600 font-medium">Kontak</a>
           </div>
 
@@ -92,13 +115,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative bg-[url('/img/B1.jpg')] bg-cover bg-no-repeat">
-      <div class="container mx-auto px-6 text-center text-white ">
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative bg-[url('/img/B1-2.png')] bg-cover bg-center bg-no-repeat">
+      <div class="container mx-auto px-6 text-center text-white">
         <div class="max-w-2xl mx-auto lg:mr-auto lg:ml-0">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tight mb-6">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tight mb-6" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">
             Solusi Mesin <span class="hidden 2xl:inline"><br /></span>Industri Terpercaya
           </h1>
-          <p class="text-lg md:text-2xl lg:text-3xl 2xl:text-4xl mb-8">Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda</p>
+          <p class="text-lg md:text-2xl lg:text-3xl 2xl:text-4xl mb-8" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda</p>
 
           <a
             href="#contact"
@@ -360,4 +383,3 @@
     </script>
   </body>
 </html>
-
