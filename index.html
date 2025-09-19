@@ -1,401 +1,362 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Otomasi Industri, Mesin Otomatis, Jasa Fabrikasi Sparepart | TADI</title>
-    <meta name="description" content="Kami adalah perusahaan otomasi industri yang menyediakan pembuatan mesin baru, modifikasi mesin manual menjadi otomatis, dan jasa fabrikasi sparepart.">
+    <meta name="description" content="Kami adalah perusahaan otomasi industri yang menyediakan pembuatan mesin baru, modifikasi mesin manual menjadi otomatis, dan jasa fabrikasi sparepart." />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>        
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <style>
+      .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .text-stroke {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        50% {
+          transform: translateY(-10px);
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .custom-purple {
-            background: linear-gradient(135deg, #B9A0E0 0%, #8B5CF6 100%);
-        }
-        
-        .nav-sticky {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 243, 202, 0.9);
-        }
+      }
+
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .custom-purple {
+        background: linear-gradient(135deg, #b9a0e0 0%, #8b5cf6 100%);
+      }
     </style>
-</head>
-<body class="font-sans">
+  </head>
+  <body class="font-sans">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center">
-                        <img src="/img/TADI Color (Text Alt) - Transparent.png" alt="">
-                    </div>
-                    <span class="text-xl text-gray-800">PT. Teknik Andalan Digitalisasi Indonesia</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-800 hover:text-purple-600  font-medium">Beranda</a>
-                    <div class="relative group">
-                        <a href="#services" class="text-gray-800 hover:text-purple-600 font-medium flex items-center">
-                            Layanan <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan dan Fabrikasi Sparepart</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Penggantian PLC</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Rekondisi dan Modifikasi Mesin</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pembuatan SCADA</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan Mesin Baru</a>
-                        </div>
-                    </div>
-                    <a href="#about" class="text-gray-800 hover:text-purple-600 font-medium">Tentang Kami</a>
-                    <a href="#contact" class="text-gray-800 hover:text-purple-600 font-medium">Kontak</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-gray-800 text-2xl" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <nav class="fixed w-full z-50 bg-white/20 shadow-md transition-all duration-300" id="navbar">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+              <img src="/img/TADI Color (Text Alt) - Transparent.png" alt="" />
             </div>
-            
-            <!-- Mobile Menu -->
-            <div class="md:hidden mt-4 hidden" id="mobile-menu">
-                <div class="bg-white rounded-lg shadow-lg py-4">
-                    <a href="#home" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Beranda</a>
-                    <a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Layanan</a>
-                    <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tentang Kami</a>
-                    <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Kontak</a>
-                </div>
+            <span class="text-xl text-gray-800">PT. Teknik Andalan Digitalisasi Indonesia</span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="text-gray-800 hover:text-purple-600 font-medium">Beranda</a>
+            <div class="relative group">
+              <a href="#services" class="text-gray-800 hover:text-purple-600 font-medium flex items-center"> Layanan <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
+              <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan dan Fabrikasi Sparepart</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Penggantian PLC</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Rekondisi dan Modifikasi Mesin</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pembuatan SCADA</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan Mesin Baru</a>
+              </div>
             </div>
+            <a href="#about" class="text-gray-800 hover:text-purple-600 font-medium">Tentang Kami</a>
+            <a href="#contact" class="text-gray-800 hover:text-purple-600 font-medium">Kontak</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-800 text-2xl" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden mt-4 hidden" id="mobile-menu">
+          <div class="bg-white rounded-lg shadow-lg py-4">
+            <a href="#home" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Beranda</a>
+            <a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Layanan</a>
+            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tentang Kami</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Kontak</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative 
-         bg-[url('/img/background.jpg')]
-         sm:bg-[url('/img/background.jpg')]
-         lg:bg-[url('/img/background.jpg')]
-         bg-cover bg-contain bg-no-repeat">
-        <div class="container mx-auto px-4 text-center text-white">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Solusi Mesin Industri Terpercaya
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-200">
-                    Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda
-                </p>
-                <a href="#contact" class="inline-block custom-purple text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
-                    Hubungi Kami
-                </a>
-            </div>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative bg-[url('/img/B1.jpg')] bg-cover bg-no-repeat">
+      <div class="container mx-auto px-6 text-center text-white text-stroke">
+        <div class="max-w-2xl mx-auto lg:mr-auto lg:ml-0">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tight mb-6">
+            Solusi Mesin <span class="hidden 2xl:inline"><br /></span>Industri Terpercaya
+          </h1>
+          <p class="text-lg md:text-2xl lg:text-3xl 2xl:text-4xl mb-8">Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda</p>
+
+          <a
+            href="#contact"
+            class="inline-block custom-purple text-white px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 2xl:px-12 2xl:py-6 rounded-full font-semibold text-base md:text-lg lg:text-xl 2xl:text-2xl hover:scale-105 transition-transform duration-300"
+          >
+            Hubungi Kami
+          </a>
         </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
-            <i class="fas fa-chevron-down animate-bounce text-2xl"></i>
-        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="float-animation">
-                    <div class="w-full h-96 bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-cogs text-8xl mb-4"></i>
-                            <h3 class="text-2xl font-bold">TADI LOGO</h3>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h2 class="text-4xl font-bold mb-6 text-gray-800">
-                        Tentang Kami - TADI
-                    </h2>
-                    <div class="space-y-4 text-gray-600 text-lg">
-                        <p>
-                            Kami adalah perusahaan yang menyediakan sparepart berkualitas dan layanan konsultasi teknik untuk industri anda dengan komitmen <strong>"setiap suku cadang dan mesin yang kami sediakan pasti aman dari TADI"</strong>
-                        </p>
-                        <p>
-                            Kami mendukung industri dengan solusi yang tepat dan terpercaya untuk menjaga performa serta keselamatan operasional peralatan anda.
-                        </p>
-                    </div>
-                    <a href="#contact" class="inline-block mt-6 border-2 border-gray-800 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300">
-                        Hubungi Kami
-                    </a>
-                </div>
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="float-animation">
+            <div class="w-full h-96 bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center">
+              <div class="text-white text-center">
+                <i class="fas fa-cogs text-8xl mb-4"></i>
+                <h3 class="text-2xl font-bold">TADI LOGO</h3>
+              </div>
             </div>
+          </div>
+
+          <div>
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">Tentang Kami - TADI</h2>
+            <div class="space-y-4 text-gray-600 text-lg">
+              <p>Kami adalah perusahaan yang menyediakan sparepart berkualitas dan layanan konsultasi teknik untuk industri anda dengan komitmen <strong>"setiap suku cadang dan mesin yang kami sediakan pasti aman dari TADI"</strong></p>
+              <p>Kami mendukung industri dengan solusi yang tepat dan terpercaya untuk menjaga performa serta keselamatan operasional peralatan anda.</p>
+            </div>
+            <a href="#contact" class="inline-block mt-6 border-2 border-gray-800 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300"> Hubungi Kami </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 bg-yellow-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-800">
-                    Layanan Otomasi Industri
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Kami menyediakan solusi otomasi untuk mesin baru dan modifikasi mesin manual menjadi otomatis
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-                <!-- Industrial Image Placeholder -->
-                <div class="order-2 md:order-1">
-                    <div class="w-full h-80 bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-industry text-6xl mb-4"></i>
-                            <p class="text-lg">Industrial Automation Image</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="order-1 md:order-2 space-y-8">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Fabrikasi Sparepart Custom</h3>
-                        <p class="text-gray-600">Kami menyediakan sparepart untuk semua mesin, baik standar maupun custom sesuai permintaan.</p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Pembuatan Mesin Baru</h3>
-                        <p class="text-gray-600">Kami merancang dan memproduksi mesin baru sesuai kebutuhan industri Anda.</p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Modifikasi Mesin Manual</h3>
-                        <p class="text-gray-600">Ubah mesin manual Anda menjadi otomatis dengan teknologi terbaru dan efisien.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-gray-800">Layanan Otomasi Industri</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">Kami menyediakan solusi otomasi untuk mesin baru dan modifikasi mesin manual menjadi otomatis</p>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <!-- Industrial Image Placeholder -->
+          <div class="order-2 md:order-1">
+            <div class="w-full h-80 bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center">
+              <div class="text-white text-center">
+                <i class="fas fa-industry text-6xl mb-4"></i>
+                <p class="text-lg">Industrial Automation Image</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 md:order-2 space-y-8">
+            <div>
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">Fabrikasi Sparepart Custom</h3>
+              <p class="text-gray-600">Kami menyediakan sparepart untuk semua mesin, baik standar maupun custom sesuai permintaan.</p>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">Pembuatan Mesin Baru</h3>
+              <p class="text-gray-600">Kami merancang dan memproduksi mesin baru sesuai kebutuhan industri Anda.</p>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">Modifikasi Mesin Manual</h3>
+              <p class="text-gray-600">Ubah mesin manual Anda menjadi otomatis dengan teknologi terbaru dan efisien.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Gallery Section -->
     <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-800">Galeri Proyek</h2>
-                <p class="text-xl text-gray-600">Lihat berbagai mesin otomatis dan sparepart yang kami buat</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Gallery Items -->
-                <div class="group cursor-pointer">
-                    <div class="w-full h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                        <div class="w-full h-full flex items-center justify-center text-white">
-                            <div class="text-center">
-                                <i class="fas fa-tools text-4xl mb-2"></i>
-                                <p>Industrial Tools</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="group cursor-pointer">
-                    <div class="w-full h-64 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                        <div class="w-full h-full flex items-center justify-center text-white">
-                            <div class="text-center">
-                                <i class="fas fa-cogs text-4xl mb-2"></i>
-                                <p>Automation System</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="group cursor-pointer">
-                    <div class="w-full h-64 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                        <div class="w-full h-full flex items-center justify-center text-white">
-                            <div class="text-center">
-                                <i class="fas fa-microchip text-4xl mb-2"></i>
-                                <p>Control Systems</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="group cursor-pointer">
-                    <div class="w-full h-64 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                        <div class="w-full h-full flex items-center justify-center text-white">
-                            <div class="text-center">
-                                <i class="fas fa-robot text-4xl mb-2"></i>
-                                <p>Robotics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-gray-800">Galeri Proyek</h2>
+          <p class="text-xl text-gray-600">Lihat berbagai mesin otomatis dan sparepart yang kami buat</p>
         </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Gallery Items -->
+          <div class="group cursor-pointer">
+            <div class="w-full h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="w-full h-full flex items-center justify-center text-white">
+                <div class="text-center">
+                  <i class="fas fa-tools text-4xl mb-2"></i>
+                  <p>Industrial Tools</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="w-full h-64 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="w-full h-full flex items-center justify-center text-white">
+                <div class="text-center">
+                  <i class="fas fa-cogs text-4xl mb-2"></i>
+                  <p>Automation System</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="w-full h-64 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="w-full h-full flex items-center justify-center text-white">
+                <div class="text-center">
+                  <i class="fas fa-microchip text-4xl mb-2"></i>
+                  <p>Control Systems</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="w-full h-64 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="w-full h-full flex items-center justify-center text-white">
+                <div class="text-center">
+                  <i class="fas fa-robot text-4xl mb-2"></i>
+                  <p>Robotics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact" class="bg-purple-800 text-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-12">
-                <!-- Company Info -->
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">TADI</h3>
-                    <p class="text-purple-200 mb-4">Teknik Andalan Digitalisasi Indonesia</p>
-                    <p class="text-sm text-purple-300">Spesialis Sparepart dan Konsultasi Teknik</p>
-                    
-                    <!-- Social Media -->
-                    <div class="flex space-x-4 mt-6">
-                        <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
-                    <div class="space-y-3">
-                        <p class="flex items-center">
-                            <i class="fas fa-phone mr-3"></i>
-                            +628561182716 - Dean
-                        </p>
-                        <p class="flex items-center">
-                            <i class="fas fa-phone mr-3"></i>
-                            +6281553361953 - Abdul
-                        </p>
-                        <p class="flex items-center">
-                            <i class="fas fa-envelope mr-3"></i>
-                            info@taditeknik.com
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Contact Form -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm mb-2">Masukkan alamat email Anda</label>
-                            <input 
-                                type="email" 
-                                placeholder="Email Anda di sini" 
-                                class="w-full px-4 py-2 rounded-lg border border-purple-600 bg-white text-gray-800 focus:outline-none focus:border-purple-400"
-                                required
-                            >
-                        </div>
-                        <button 
-                            type="submit" 
-                            class="w-full custom-purple py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300"
-                        >
-                            Kirim permintaan Anda
-                        </button>
-                    </form>
-                </div>
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- Company Info -->
+          <div>
+            <h3 class="text-2xl font-bold mb-4">TADI</h3>
+            <p class="text-purple-200 mb-4">Teknik Andalan Digitalisasi Indonesia</p>
+            <p class="text-sm text-purple-300">Spesialis Sparepart dan Konsultasi Teknik</p>
+
+            <!-- Social Media -->
+            <div class="flex space-x-4 mt-6">
+              <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
-            
-            <!-- Copyright -->
-            <div class="border-t border-purple-700 pt-8 mt-12 text-center">
-                <p class="text-purple-300 text-sm">© 2024. All rights reserved.</p>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+            <div class="space-y-3">
+              <p class="flex items-center">
+                <i class="fas fa-phone mr-3"></i>
+                +628561182716 - Dean
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-phone mr-3"></i>
+                +6281553361953 - Abdul
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-envelope mr-3"></i>
+                info@taditeknik.com
+              </p>
             </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm mb-2">Masukkan alamat email Anda</label>
+                <input type="email" placeholder="Email Anda di sini" class="w-full px-4 py-2 rounded-lg border border-purple-600 bg-white text-gray-800 focus:outline-none focus:border-purple-400" required />
+              </div>
+              <button type="submit" class="w-full custom-purple py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300">Kirim permintaan Anda</button>
+            </form>
+          </div>
         </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-purple-700 pt-8 mt-12 text-center">
+          <p class="text-purple-300 text-sm">© 2024. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('nav-sticky');
-            } else {
-                navbar.classList.remove('nav-sticky');
-            }
-        });
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
-                }
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
         });
+      });
 
-        // Form submission
-        document.querySelector('footer form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            if (email) {
-                alert('Terima kasih! Permintaan Anda telah dikirim.');
-                this.reset();
-            }
+      // Form submission
+      document.querySelector("footer form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        if (email) {
+          alert("Terima kasih! Permintaan Anda telah dikirim.");
+          this.reset();
+        }
+      });
+
+      // Add entrance animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
         });
+      }, observerOptions);
 
-        // Add entrance animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      // Observe sections for animation
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(section);
+      });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-
-        // Hero section is immediately visible
-        document.getElementById('home').style.opacity = '1';
-        document.getElementById('home').style.transform = 'translateY(0)';
+      // Hero section is immediately visible
+      document.getElementById("home").style.opacity = "1";
+      document.getElementById("home").style.transform = "translateY(0)";
     </script>
-</body>
+  </body>
 </html>
-
