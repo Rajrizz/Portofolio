@@ -17,7 +17,7 @@
           extend: {
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
-              oswald: ['Oswald', 'sans-serif'],
+              oswald: ["Oswald", "sans-serif"],
             },
           },
         },
@@ -57,11 +57,180 @@
       .custom-purple {
         background: linear-gradient(135deg, #b9a0e0 0%, #8b5cf6 100%);
       }
+
+      /* Carousel Styles */
+      .carousel-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      /* For larger screens, use cover but with better control */
+      @media (min-width: 1024px) {
+        .carousel-slide {
+          background-size: cover;
+        }
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+      }
+
+      .carousel-content {
+        position: relative;
+        z-index: 10;
+      }
+
+      .text-content {
+        position: absolute;
+        top: 60%;
+        left: 1%;
+        transform: translateY(-50%);
+        width: 60%;
+        max-width: 800px;
+        opacity: 0;
+        transition: all 0.8s ease-in-out;
+      }
+
+      .text-content.active {
+        opacity: 1;
+      }
+
+      .text-fade {
+        opacity: 0;
+        transform: translateY(-50%) translateY(20px);
+        transition: all 0.8s ease-in-out;
+      }
+
+      .text-fade.active {
+        opacity: 1;
+        transform: translateY(-50%) translateY(0);
+      }
+
+      @media (max-width: 1024px) {
+        .text-content {
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          text-align: center;
+        }
+
+        .text-fade {
+          transform: translate(-50%, -50%) translateY(20px);
+        }
+
+        .text-fade.active {
+          transform: translate(-50%, -50%) translateY(0);
+        }
+      }
+
+      /* Progress bar */
+      .progress-bar {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+        overflow: hidden;
+        z-index: 20;
+      }
+
+      @media (max-width: 768px) {
+        .progress-bar {
+          bottom: 20px;
+          width: 150px;
+        }
+      }
+
+      .progress-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: white;
+        animation: progress 3s linear infinite;
+      }
+
+      @keyframes progress {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      /* About Section Enhancements */
+      .feature-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border: 1px solid #cbd5e1;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-color: #8b5cf6;
+      }
+
+      .icon-bounce {
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover .icon-bounce {
+        transform: scale(1.1);
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animate-slide-left {
+        animation: slideInLeft 0.8s ease-out;
+      }
+
+      .animate-slide-right {
+        animation: slideInRight 0.8s ease-out;
+      }
     </style>
   </head>
   <body class="font-poppins smooth overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/20 shadow-md transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 bg-gray-800 backdrop-blur shadow-white shadow-sm transition-all duration-300" id="navbar">
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo -->
@@ -69,14 +238,14 @@
             <div class="w-12 h-12 rounded-lg flex items-center justify-center">
               <img src="/img/TADI Color (Text Alt) - Transparent.png" alt="" />
             </div>
-            <span class="text-xl text-gray-800">PT. Teknik Andalan Digitalisasi Indonesia</span>
+            <span class="text-xl text-white">PT. Teknik Andalan Digitalisasi Indonesia</span>
           </div>
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center space-x-8">
-            <a href="#home" class="text-gray-800 hover:text-purple-600 font-medium">Beranda</a>
+            <a href="#home" class="text-white hover:text-purple-600 font-medium">Beranda</a>
             <div class="relative group">
-              <a href="#services" class="text-gray-800 hover:text-purple-600 font-medium flex items-center"> Layanan <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
+              <a href="#services" class="text-white hover:text-purple-600 font-medium flex items-center"> Layanan <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
               <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pengadaan dan Fabrikasi Sparepart</a>
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Penggantian PLC</a>
@@ -86,14 +255,14 @@
               </div>
             </div>
             <div class="relative group">
-              <a href="#services" class="text-gray-800 hover:text-purple-600 font-medium flex items-center"> Tentang Kami <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
+              <a href="#services" class="text-white hover:text-purple-600 font-medium flex items-center"> Tentang Kami <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
               <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Visi & Misi</a>
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sejarah Perusahaan</a>
               </div>
             </div>
-            <a href="#contact" class="text-gray-800 hover:text-purple-600 font-medium">Kontak</a>
+            <a href="#contact" class="text-white hover:text-purple-600 font-medium">Kontak</a>
           </div>
 
           <!-- Mobile Menu Button -->
@@ -114,52 +283,266 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative bg-[url('/img/B1-2.png')] bg-cover bg-center bg-no-repeat">
-      <div class="container mx-auto px-6 text-center text-white">
-        <div class="max-w-2xl mx-auto lg:mr-auto lg:ml-0">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold leading-tight mb-6" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">
-            Solusi Mesin <span class="hidden 2xl:inline"><br /></span>Industri Terpercaya
-          </h1>
-          <p class="text-lg md:text-2xl lg:text-3xl 2xl:text-4xl mb-8" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda</p>
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="carousel-container min-h-screen flex items-center justify-center relative">
+      <!-- Slide 1 -->
+      <div class="carousel-slide active" style="background-image: url('/img/B1-2.png')">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
 
-          <a
-            href="#contact"
-            class="inline-block custom-purple text-white px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 2xl:px-12 2xl:py-6 rounded-full font-semibold text-base md:text-lg lg:text-xl 2xl:text-2xl hover:scale-105 transition-transform duration-300"
-          >
-            Hubungi Kami
-          </a>
+      <!-- Slide 2 -->
+      <div class="carousel-slide" style="background-image: url('/img/B2.png')">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="carousel-content container mx-auto px-6 text-center text-white min-h-screen relative">
+        <div class="max-w-4xl mx-auto">
+          <!-- Text Content 1 -->
+          <div class="text-content active text-fade" id="content-1">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">Solusi Mesin <br class="hidden lg:block" />Industri Terpercaya</h1>
+            <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-12 max-w-3xl mx-auto" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">
+              Kami menyediakan jasa fabrikasi sparepart dan berbagai konsultasi teknik untuk kebutuhan industri Anda
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="#contact" class="inline-flex items-center justify-center custom-purple text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300 shadow-lg">
+                <span>Hubungi Kami</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a
+                href="#services"
+                class="inline-flex items-center justify-center bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-semibold text-lg hover:bg-white/30 transition-all duration-300"
+              >
+                <span>Lihat Layanan</span>
+                <i class="fas fa-chevron-down ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Text Content 2 -->
+          <div class="text-content text-fade" id="content-2">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">Otomasi Industri <br class="hidden lg:block" />Modern</h1>
+            <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-12 max-w-3xl mx-auto" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)">
+              Transformasi digital untuk industri masa depan dengan teknologi terdepan dan inovasi berkelanjutan
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="#contact" class="inline-flex items-center justify-center custom-purple text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300 shadow-lg">
+                <span>Hubungi Kami</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a
+                href="#services"
+                class="inline-flex items-center justify-center bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-semibold text-lg hover:bg-white/30 transition-all duration-300"
+              >
+                <span>Lihat Layanan</span>
+                <i class="fas fa-chevron-down ml-2"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="float-animation">
-            <div class="w-full h-96 bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center">
-              <div class="text-white text-center">
-                <i class="fas fa-cogs text-8xl mb-4"></i>
-                <h3 class="text-2xl font-bold">TADI LOGO</h3>
+    <!-- Ultra Modern About Section -->
+    <section id="about" class="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div class="absolute top-40 right-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+      </div>
+
+      <!-- Floating Geometric Shapes -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-20 left-1/4 w-4 h-4 bg-cyan-400 rotate-45 animate-bounce opacity-60" style="animation-delay: 1s"></div>
+        <div class="absolute top-60 right-1/3 w-6 h-6 bg-purple-400 rounded-full animate-pulse opacity-40" style="animation-delay: 2s"></div>
+        <div class="absolute bottom-40 left-1/6 w-3 h-12 bg-blue-400 rotate-12 animate-bounce opacity-50" style="animation-delay: 3s"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-2 mb-8">
+            <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <span class="text-cyan-400 text-sm font-medium uppercase tracking-wider">About Us</span>
+          </div>
+          <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">Inovasi Digital <br class="hidden md:block" />Masa Depan</h2>
+          <div class="w-32 h-1 bg-gradient-to-r from-purple-500 via-cyan-400 to-blue-500 mx-auto mb-8 rounded-full"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">PT. Teknik Andalan Digitalisasi Indonesia - Memimpin revolusi industri 4.0 dengan teknologi otomasi terdepan</p>
+        </div>
+
+        <!-- Interactive Stats -->
+        <div class="grid md:grid-cols-4 gap-8 mb-24 hidden">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-slate-900 p-8 rounded-2xl border border-purple-500/30 text-center transform group-hover:scale-105 transition-all duration-300">
+              <div class="text-4xl font-bold text-cyan-400 mb-2 counter" data-target="150">0</div>
+              <div class="text-purple-200 text-sm uppercase tracking-wide">Proyek Berhasil</div>
+            </div>
+          </div>
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-slate-900 p-8 rounded-2xl border border-cyan-500/30 text-center transform group-hover:scale-105 transition-all duration-300">
+              <div class="text-4xl font-bold text-purple-400 mb-2 counter" data-target="100">0</div>
+              <div class="text-cyan-200 text-sm uppercase tracking-wide">Klien Puas</div>
+            </div>
+          </div>
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-slate-900 p-8 rounded-2xl border border-blue-500/30 text-center transform group-hover:scale-105 transition-all duration-300">
+              <div class="text-4xl font-bold text-blue-400 mb-2 counter" data-target="8">0</div>
+              <div class="text-blue-200 text-sm uppercase tracking-wide">Tahun Pengalaman</div>
+            </div>
+          </div>
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-slate-900 p-8 rounded-2xl border border-indigo-500/30 text-center transform group-hover:scale-105 transition-all duration-300">
+              <div class="text-4xl font-bold text-indigo-400 mb-2">24/7</div>
+              <div class="text-indigo-200 text-sm uppercase tracking-wide">Technical Support</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <!-- Left: Company Mission -->
+          <div class="space-y-8">
+            <div class="relative">
+              <div class="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-purple-600 rounded-full"></div>
+              <div class="pl-8">
+                <h3 class="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Visi Transformasi Digital</h3>
+                <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                  <p>Sebagai pioneer dalam digitalisasi industri Indonesia, TADI berkomitmen menghadirkan solusi otomasi yang tidak hanya efisien, tetapi juga sustainable dan future-ready.</p>
+
+                  <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-6 rounded-xl border-l-4 backdrop-blur-sm">
+                    <p class="text-xl font-semibold text-white italic flex items-center">
+                      <i class="fas fa-quote-left text-cyan-400 mr-3"></i>
+                      Setiap suku cadang dan mesin yang kami sediakan pasti aman dari TADI
+                      <i class="fas fa-quote-right text-purple-400 ml-3"></i>
+                    </p>
+                  </div>
+
+                  <p>Dengan teknologi AI-driven dan IoT integration, kami membantu industri Indonesia memasuki era revolusi industri 4.0 dengan confidence dan competitive advantage.</p>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="mt-8 flex flex-wrap gap-3">
+                  <span class="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-300 text-sm font-medium backdrop-blur-sm">
+                    <i class="fas fa-microchip mr-2"></i>IoT Integration
+                  </span>
+                  
+                  
+                </div>
               </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full hover:scale-105">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-200"></span>
+                <span class="relative flex items-center">
+                  Konsultasi Gratis
+                  <i class="fas fa-rocket ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </span>
+              </a>
+              <a
+                href="#services"
+                class="inline-flex items-center justify-center px-8 py-4 font-semibold text-cyan-400 transition-all duration-200 bg-transparent border-2 border-cyan-400/50 rounded-full hover:bg-cyan-400/10 hover:border-cyan-400"
+              >
+                <span>Jelajahi Layanan</span>
+                <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+              </a>
             </div>
           </div>
 
-          <div>
-            <h2 class="text-4xl font-bold mb-6 text-gray-800">Tentang Kami - TADI</h2>
-            <div class="space-y-4 text-gray-600 text-lg">
-              <p>Kami adalah perusahaan yang menyediakan sparepart berkualitas dan layanan konsultasi teknik untuk industri anda dengan komitmen <strong>"setiap suku cadang dan mesin yang kami sediakan pasti aman dari TADI"</strong></p>
-              <p>Kami mendukung industri dengan solusi yang tepat dan terpercaya untuk menjaga performa serta keselamatan operasional peralatan anda.</p>
+          <!-- Right: Company Showcase Card -->
+          <div class="relative">
+            <div class="relative group cursor-pointer">
+              <!-- Glowing Border -->
+              <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 via-cyan-600 to-blue-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+
+              <!-- Main Card -->
+              <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 rounded-3xl border border-purple-500/30 backdrop-blur-sm transform group-hover:scale-105 transition-all duration-500">
+                <!-- Card Header -->
+                <div class="flex items-center justify-between mb-8">
+                  <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full flex items-center justify-center">
+                      <i class="fas fa-cogs text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-lg">TADI Excellence</h4>
+                      <p class="text-gray-400 text-sm">Engineering Solutions</p>
+                    </div>
+                  </div>
+                  <div class="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+                </div>
+
+                <!-- Service Categories -->
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+                    <div class="flex items-center space-x-3">
+                      <i class="fas fa-tools text-purple-400"></i>
+                      <span class="text-gray-300">Fabrikasi Sparepart</span>
+                    </div>
+                    <i class="fas fa-arrow-right text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 bg-gradient-to-r from-cyan-900/30 to-purple-900/30 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+                    <div class="flex items-center space-x-3">
+                      <i class="fas fa-microchip text-cyan-400"></i>
+                      <span class="text-gray-300">Penggantian PLC</span>
+                    </div>
+                    <i class="fas fa-arrow-right text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300">
+                    <div class="flex items-center space-x-3">
+                      <i class="fas fa-robot text-blue-400"></i>
+                      <span class="text-gray-300">Otomasi Mesin</span>
+                    </div>
+                    <i class="fas fa-arrow-right text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+                </div>
+
+                <!-- Company Values -->
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-4 bg-gradient-to-br from-purple-900/40 to-transparent rounded-lg border border-purple-500/20 text-center">
+                    <i class="fas fa-shield-alt text-purple-400 text-xl mb-2"></i>
+                    <div class="text-purple-300 text-sm font-medium">Kualitas</div>
+                    <div class="text-gray-400 text-xs">Terjamin</div>
+                  </div>
+                  <div class="p-4 bg-gradient-to-br from-cyan-900/40 to-transparent rounded-lg border border-cyan-500/20 text-center">
+                    <i class="fas fa-clock text-cyan-400 text-xl mb-2"></i>
+                    <div class="text-cyan-300 text-sm font-medium">Delivery</div>
+                    <div class="text-gray-400 text-xs">Tepat Waktu</div>
+                  </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="mt-6 text-center">
+                  <button class="w-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white py-3 rounded-xl font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105">
+                    Konsultasi Sekarang
+                  </button>
+                </div>
+
+                <!-- Bottom Glow -->
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full opacity-75"></div>
+              </div>
             </div>
-            <a href="#contact" class="inline-block mt-6 border-2 border-gray-800 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300"> Hubungi Kami </a>
+
+            <!-- Floating Icons -->
+            <div class="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center animate-bounce" style="animation-delay: 0.5s">
+              <i class="fas fa-wrench text-white text-sm"></i>
+            </div>
+            <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center animate-pulse">
+              <i class="fas fa-gear text-white text-xs"></i>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-yellow-50">
+    <section id="services" class="py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4 text-gray-800">Layanan Otomasi Industri</h2>
@@ -255,7 +638,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-purple-800 text-white py-16">
+    <footer id="contact" class="bg-gray-800 text-white py-16">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-12">
           <!-- Company Info -->
@@ -319,6 +702,30 @@
 
     <!-- JavaScript -->
     <script>
+      // Carousel functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const contents = document.querySelectorAll(".text-content");
+      const totalSlides = slides.length;
+
+      function nextSlide() {
+        // Remove active classes
+        slides[currentSlide].classList.remove("active");
+        contents[currentSlide].classList.remove("active");
+
+        // Update current slide
+        currentSlide = (currentSlide + 1) % totalSlides;
+
+        // Add active classes to new slide
+        slides[currentSlide].classList.add("active");
+        setTimeout(() => {
+          contents[currentSlide].classList.add("active");
+        }, 200);
+      }
+
+      // Auto-play carousel every 3 seconds
+      setInterval(nextSlide, 4000);
+
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
