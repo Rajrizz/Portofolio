@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami - Otomasi Industri, Mesin Otomatis, Jasa Fabrikasi | TADI</title>
+    <meta name="description" content="Layanan lengkap TADI: Fabrikasi sparepart industri, pengadaan mesin, PLC systems, IoT integration, mechanical design, dan solusi otomasi industri terpercaya.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .custom-purple {
+        background: linear-gradient(135deg, #b9a0e0 0%, #8b5cf6 100%);
+      }
+
+      .service-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+
+      .tech-badge {
+        transition: all 0.3s ease;
+      }
+
+      .tech-badge:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+</head>
+<body class="font-poppins bg-slate-900 text-white">
+
+    <nav class="fixed w-full z-50 bg-gray-800 backdrop-blur shadow-white shadow-sm transition-all duration-300" id="navbar">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+              <img src="/img/TADI Color (Text Alt) - Transparent.png" alt="" />
+            </div>
+            <span class="text-xl text-white">PT. Teknik Andalan Digitalisasi Indonesia</span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-white hover:text-purple-600 font-medium">Beranda</a>
+            <a href="service.html" class="text-purple-600 font-medium flex items-center"> Layanan </a>
+            <div class="relative group">
+              <a href="#services" class="text-white hover:text-purple-600 font-medium flex items-center"> Tentang Kami <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
+              <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Visi & Misi</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Galeri </a>
+              </div>
+            </div>
+            <a href="contact.html" class="text-white hover:text-purple-600 font-medium">Hubungi kami</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-white text-2xl" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden mt-4 hidden" id="mobile-menu">
+          <div class="bg-white rounded-lg shadow-lg py-4">
+            <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Beranda</a>
+            <a href="service.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Layanan</a>
+            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tentang Kami</a>
+            <a href="contact.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hubungi kami</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <div class="absolute top-20 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-20 left-10 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-2 mb-8">
+            <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <span class="text-cyan-400 text-sm font-medium uppercase tracking-wider">Our Services</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent leading-tight">
+            Layanan Profesional <br class="hidden md:block">Otomasi Industri
+          </h1>
+          
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Solusi lengkap untuk kebutuhan industri modern dengan teknologi terdepan dan tim ahli berpengalaman
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 1: Sparepart Industri -->
+    <section class="py-20 bg-gradient-to-br from-purple-900 via-slate-900 to-purple-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="relative group service-card">
+              <div class="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-700"></div>
+              <div class="relative bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-8 border border-purple-500/30">
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-xl p-6 text-center border border-purple-500/20">
+                    <img src="/img/beltconv.jpg" alt="Belt Conveyor" class="rounded-xl mb-8 !w-[261px] !h-[200px] object-cover">
+                    <i class="fas fa-cog text-4xl text-purple-400 mb-3"></i>
+                    <h4 class="text-white font-semibold mb-2">Belt Conveyor</h4>
+                    <p class="text-gray-400 text-sm">Sistem conveyor berkualitas tinggi</p>
+                  </div>
+                  <div class="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-xl p-6 text-center border border-blue-500/20">
+                    <img src="/img/rollerconv.jpg" alt="Roller Conveyor" class="rounded-xl mb-8 !w-[261px] !h-[200px] object-cover">
+                    <i class="fas fa-tools text-4xl text-blue-400 mb-3"></i>
+                    <h4 class="text-white font-semibold mb-2">Roller Conveyor</h4>
+                    <p class="text-gray-400 text-sm">Roller presisi untuk material handling</p>
+                  </div>
+                  <div class="bg-gradient-to-br from-cyan-600/20 to-purple-600/20 rounded-xl p-6 text-center border border-cyan-500/20">
+                    <i class="fas fa-wrench text-4xl text-cyan-400 mb-3"></i>
+                    <h4 class="text-white font-semibold mb-2">Custom Parts</h4>
+                    <p class="text-gray-400 text-sm">Sparepart sesuai spesifikasi khusus</p>
+                  </div>
+                  <div class="bg-gradient-to-br from-indigo-600/20 to-blue-600/20 rounded-xl p-6 text-center border border-indigo-500/20">
+                    <i class="fas fa-cube text-4xl text-indigo-400 mb-3"></i>
+                    <h4 class="text-white font-semibold mb-2">Standard Parts</h4>
+                    <p class="text-gray-400 text-sm">Komponen standar industri</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="order-1 lg:order-2 space-y-8">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                  <i class="fas fa-tools text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h2 class="text-4xl font-bold bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">Sparepart Industri</h2>
+                  <p class="text-gray-400 text-lg">Fabrikasi & Pengadaan Komponen</p>
+                </div>
+              </div>
+              
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                TADI menyediakan layanan fabrikasi dan pengadaan sparepart industri dengan standar kualitas tinggi. Tim ahli kami berpengalaman dalam memproduksi komponen custom maupun standar untuk berbagai kebutuhan industri.
+              </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-4 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl border border-purple-500/20">
+                <i class="fas fa-check-circle text-purple-400 mb-2"></i>
+                <h4 class="text-white font-semibold text-sm">Kualitas Terjamin</h4>
+                <p class="text-gray-400 text-xs">Material berkualitas tinggi</p>
+              </div>
+              <div class="p-4 bg-gradient-to-r from-blue-900/30 to-cyan-900/30 rounded-xl border border-blue-500/20">
+                <i class="fas fa-clock text-blue-400 mb-2"></i>
+                <h4 class="text-white font-semibold text-sm">Delivery Cepat</h4>
+                <p class="text-gray-400 text-xs">Lead time optimal</p>
+              </div>
+              <div class="p-4 bg-gradient-to-r from-cyan-900/30 to-purple-900/30 rounded-xl border border-cyan-500/20">
+                <i class="fas fa-drafting-compass text-cyan-400 mb-2"></i>
+                <h4 class="text-white font-semibold text-sm">Custom Design</h4>
+                <p class="text-gray-400 text-xs">Sesuai spesifikasi Anda</p>
+              </div>
+              <div class="p-4 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 rounded-xl border border-indigo-500/20">
+                <i class="fas fa-medal text-indigo-400 mb-2"></i>
+                <h4 class="text-white font-semibold text-sm">ISO Certified</h4>
+                <p class="text-gray-400 text-xs">Standar internasional</p>
+              </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-white">Teknologi & Material:</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="tech-badge px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
+                  <i class="fas fa-atom mr-2"></i>Stainless Steel
+                </span>
+                <span class="tech-badge px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium">
+                  <i class="fas fa-hammer mr-2"></i>Mild Steel
+                </span>
+                <span class="tech-badge px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-300 text-sm font-medium">
+                  <i class="fas fa-cogs mr-2"></i>Precision Machining
+                </span>
+                <span class="tech-badge px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm font-medium">
+                  <i class="fas fa-fire mr-2"></i>Welding & Fabrication
+                </span>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-phone mr-3"></i>Konsultasi Sparepart
+                <i class="fas fa-arrow-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 2: Pengadaan & Perawatan -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
+                  <i class="fas fa-industry text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text text-transparent">Pengadaan & Perawatan</h2>
+                  <p class="text-gray-400 text-lg">Mesin & Equipment Industri</p>
+                </div>
+              </div>
+              
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                Layanan komprehensif pengadaan mesin industri dari dalam dan luar negeri, serta perawatan berkelanjutan untuk memastikan performa optimal dan umur panjang equipment Anda.
+              </p>
+            </div>
+
+            <!-- Service Categories -->
+            <div class="space-y-4">
+              <div class="p-6 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-robot text-cyan-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Mesin Otomasi Custom</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Desain dan fabrikasi mesin otomasi sesuai kebutuhan spesifik proses produksi Anda dengan teknologi PLC dan HMI terkini.</p>
+              </div>
+
+              <div class="p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-conveyor-belt text-blue-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Conveyor System</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Sistem conveyor terintegrasi untuk optimasi material handling dan workflow di fasilitas produksi.</p>
+              </div>
+
+              <div class="p-6 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 rounded-xl border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-tools text-purple-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Rekondisi & Maintenance</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Layanan rekondisi mesin lama dan program maintenance preventif untuk menjaga performa optimal equipment.</p>
+              </div>
+
+              <div class="p-6 bg-gradient-to-r from-indigo-900/30 to-cyan-900/30 rounded-xl border border-indigo-500/20 hover:border-indigo-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-globe text-indigo-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Pengadaan Import</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Pengadaan mesin dan komponen berkualitas tinggi dari supplier terpercaya di Jepang, Jerman, dan negara industri maju lainnya.</p>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-cogs mr-3"></i>Konsultasi Pengadaan
+                <i class="fas fa-arrow-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="order-2">
+            <div class="relative group service-card">
+              <div class="absolute -inset-2 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-700"></div>
+              <div class="relative bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-8 border border-cyan-500/30">
+                <div class="space-y-6">
+                  
+                  
+                  <!-- Process Flow -->
+                  <div class="space-y-4">
+                    <h4 class="text-white font-bold text-lg mb-4">Proses Pengadaan:</h4>
+                    <div class="space-y-3">
+                      <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                        <div class="w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                        <span class="text-gray-300">Konsultasi & Survey</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                        <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                        <span class="text-gray-300">Desain & Proposal</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                        <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                        <span class="text-gray-300">Pengadaan & Instalasi</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                        <div class="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</div>
+                        <span class="text-gray-300">Testing & Commissioning</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                        <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">5</div>
+                        <span class="text-gray-300">Maintenance Support</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 3: Kebutuhan Industri -->
+    <section class="py-20 bg-gradient-to-br from-green-900 via-slate-900 to-teal-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="relative group service-card">
+              <div class="absolute -inset-2 bg-gradient-to-r from-green-500 to-teal-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-700"></div>
+              <div class="relative bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-8 border border-green-500/30">
+                <div class="space-y-6">
+                  <!-- Equipment Showcase -->
+                  <div class="grid grid-cols-1 gap-6">
+                    <div class="p-6 bg-gradient-to-br from-green-600/20 to-teal-600/20 rounded-xl border border-green-500/20 text-center">
+                      <i class="fas fa-wind text-5xl text-green-400 mb-4"></i>
+                      <h4 class="text-white font-bold text-xl mb-2">Kompresor Industri</h4>
+                      <p class="text-gray-300">Sistem kompresi udara untuk berbagai aplikasi industri dengan efisiensi tinggi</p>
+                      <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                        <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">Rotary Screw</span>
+                        <span class="px-3 py-1 bg-teal-500/20 text-teal-300 text-xs rounded-full">Reciprocating</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full">Centrifugal</span>
+                      </div>
+                    </div>
+                    
+                    <div class="p-6 bg-gradient-to-br from-teal-600/20 to-cyan-600/20 rounded-xl border border-teal-500/20 text-center">
+                      <i class="fas fa-warehouse text-5xl text-teal-400 mb-4"></i>
+                      <h4 class="text-white font-bold text-xl mb-2">Warehouse System (AIOI)</h4>
+                      <p class="text-gray-300">Sistem manajemen gudang otomatis untuk optimasi storage dan inventory</p>
+                      <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                        <span class="px-3 py-1 bg-teal-500/20 text-teal-300 text-xs rounded-full">WMS</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full">RFID</span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Barcode</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Technical Specs -->
+                  <div class="bg-slate-700/50 rounded-xl p-6">
+                    <h5 class="text-white font-bold mb-3">Spesifikasi Teknis:</h5>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                      <div class="flex justify-between">
+                        <span class="text-gray-400">Kapasitas:</span>
+                        <span class="text-green-400">Custom</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-gray-400">Power:</span>
+                        <span class="text-green-400">Variable</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-gray-400">Control:</span>
+                        <span class="text-green-400">PLC/HMI</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-gray-400">Monitoring:</span>
+                        <span class="text-green-400">IoT Ready</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="order-1 lg:order-2 space-y-8">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
+                  <i class="fas fa-warehouse text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h2 class="text-4xl font-bold bg-gradient-to-r from-green-300 to-teal-300 bg-clip-text text-transparent">Kebutuhan Industri</h2>
+                  <p class="text-gray-400 text-lg">Industrial Equipment & Systems</p>
+                </div>
+              </div>
+              
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                TADI menyediakan berbagai equipment industri essential untuk mendukung operasional pabrik yang efisien dan reliable. Dari sistem kompresi udara hingga manajemen gudang otomatis, kami memastikan setiap kebutuhan industri Anda terpenuhi dengan standar kualitas internasional.
+              </p>
+            </div>
+
+            <!-- Key Benefits -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-6 bg-gradient-to-r from-green-900/30 to-teal-900/30 rounded-xl border border-green-500/20">
+                <i class="fas fa-leaf text-green-400 text-2xl mb-3"></i>
+                <h4 class="text-white font-bold mb-2">Energy Efficient</h4>
+                <p class="text-gray-300 text-sm">Teknologi hemat energi untuk mengurangi operational cost dan carbon footprint</p>
+              </div>
+              
+              <div class="p-6 bg-gradient-to-r from-teal-900/30 to-cyan-900/30 rounded-xl border border-teal-500/20">
+                <i class="fas fa-chart-line text-teal-400 text-2xl mb-3"></i>
+                <h4 class="text-white font-bold mb-2">Smart Monitoring</h4>
+                <p class="text-gray-300 text-sm">Real-time monitoring dan predictive maintenance untuk uptime maksimal</p>
+              </div>
+              
+              <div class="p-6 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl border border-cyan-500/20">
+                <i class="fas fa-shield-alt text-cyan-400 text-2xl mb-3"></i>
+                <h4 class="text-white font-bold mb-2">Reliable Operation</h4>
+                <p class="text-gray-300 text-sm">Desain robust untuk operasi 24/7 dengan minimal downtime</p>
+              </div>
+              
+              <div class="p-6 bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-xl border border-blue-500/20">
+                <i class="fas fa-handshake text-blue-400 text-2xl mb-3"></i>
+                <h4 class="text-white font-bold mb-2">Full Support</h4>
+                <p class="text-gray-300 text-sm">After-sales service lengkap dan training operator</p>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold rounded-xl hover:from-green-400 hover:to-teal-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-warehouse mr-3"></i>Konsultasi Equipment
+                <i class="fas fa-arrow-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 4: PLC Systems -->
+    <section class="py-20 bg-gradient-to-br from-orange-900 via-slate-900 to-red-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
+                  <i class="fas fa-microchip text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h2 class="text-4xl font-bold bg-gradient-to-r from-orange-300 to-red-300 bg-clip-text text-transparent">PLC Systems</h2>
+                  <p class="text-gray-400 text-lg">Programmable Logic Controller Solutions</p>
+                </div>
+              </div>
+              
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                Layanan lengkap sistem PLC mulai dari retrofit mesin lama hingga implementasi sistem kontrol baru dengan teknologi terdepan. Tim ahli kami berpengalaman dengan berbagai merk PLC global dan dapat mengintegrasikan sistem yang kompleks.
+              </p>
+            </div>
+
+            <!-- PLC Services -->
+            <div class="space-y-4">
+              <div class="p-6 bg-gradient-to-r from-orange-900/30 to-red-900/30 rounded-xl border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-exchange-alt text-orange-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Retrofit PLC</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Modernisasi sistem kontrol lama dengan teknologi PLC terbaru untuk meningkatkan efisiensi dan reliability.</p>
+                <div class="ml-12 mt-3 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">Legacy System</span>
+                  <span class="px-3 py-1 bg-red-500/20 text-red-300 text-xs rounded-full">Modernization</span>
+                </div>
+              </div>
+
+              <div class="p-6 bg-gradient-to-r from-red-900/30 to-pink-900/30 rounded-xl border border-red-500/20 hover:border-red-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-sync-alt text-red-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Penggantian PLC</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Replacement PLC yang sudah obsolete dengan migrasi program dan konfigurasi tanpa mengganggu produksi.</p>
+                <div class="ml-12 mt-3 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-red-500/20 text-red-300 text-xs rounded-full">Migration</span>
+                  <span class="px-3 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">Zero Downtime</span>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="pt-6">
+              <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold rounded-xl hover:from-orange-400 hover:to-red-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-microchip mr-3"></i>Konsultasi PLC
+                <i class="fas fa-arrow-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="order-2">
+            <div class="relative group service-card">
+              <div class="absolute -inset-2 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-700"></div>
+              <div class="relative bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-8 border border-orange-500/30">
+                <div class="space-y-6">
+                  <!-- PLC Architecture Diagram -->
+                  <div class="bg-slate-700/50 rounded-xl p-6">
+                    <h4 class="text-white font-bold mb-4 text-center">Arsitektur Sistem PLC</h4>
+                    <div class="space-y-4">
+                      <div class="flex items-center justify-between p-3 bg-orange-500/20 rounded-lg border border-orange-500/30">
+                        <div class="flex items-center">
+                          <i class="fas fa-desktop text-orange-400 mr-3"></i>
+                          <span class="text-white text-sm">HMI/SCADA</span>
+                        </div>
+                        <i class="fas fa-arrow-down text-gray-400"></i>
+                      </div>
+                      <div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">
+                        <div class="flex items-center">
+                          <i class="fas fa-microchip text-red-400 mr-3"></i>
+                          <span class="text-white text-sm">PLC Controller</span>
+                        </div>
+                        <i class="fas fa-arrow-down text-gray-400"></i>
+                      </div>
+                      <div class="flex items-center justify-between p-3 bg-pink-500/20 rounded-lg border border-pink-500/30">
+                        <div class="flex items-center">
+                          <i class="fas fa-plug text-pink-400 mr-3"></i>
+                          <span class="text-white text-sm">I/O Modules</span>
+                        </div>
+                        <i class="fas fa-arrow-down text-gray-400"></i>
+                      </div>
+                      <div class="flex items-center justify-between p-3 bg-yellow-500/20 rounded-lg border border-yellow-500/30">
+                        <div class="flex items-center">
+                          <i class="fas fa-cogs text-yellow-400 mr-3"></i>
+                          <span class="text-white text-sm">Field Devices</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Programming Languages -->
+                  <div class="bg-slate-700/50 rounded-xl p-6">
+                    <h5 class="text-white font-bold mb-3">Programming Languages:</h5>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="flex items-center p-2 bg-orange-500/20 rounded text-orange-300 text-sm">
+                        <i class="fas fa-code mr-2"></i>
+                        Ladder Logic
+                      </div>
+                      <div class="flex items-center p-2 bg-red-500/20 rounded text-red-300 text-sm">
+                        <i class="fas fa-sitemap mr-2"></i>
+                        Function Block
+                      </div>
+                      <div class="flex items-center p-2 bg-pink-500/20 rounded text-pink-300 text-sm">
+                        <i class="fas fa-file-code mr-2"></i>
+                        Structured Text
+                      </div>
+                      <div class="flex items-center p-2 bg-yellow-500/20 rounded text-yellow-300 text-sm">
+                        <i class="fas fa-project-diagram mr-2"></i>
+                        Sequential FC
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Key Features -->
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center p-4 bg-gradient-to-br from-orange-600/20 to-red-600/20 rounded-xl border border-orange-500/20">
+                      <div class="text-2xl font-bold text-orange-400 mb-1">99.9%</div>
+                      <div class="text-gray-300 text-xs">Uptime</div>
+                    </div>
+                    <div class="text-center p-4 bg-gradient-to-br from-red-600/20 to-pink-600/20 rounded-xl border border-red-500/20">
+                      <div class="text-2xl font-bold text-red-400 mb-1">24/7</div>
+                      <div class="text-gray-300 text-xs">Monitoring</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 5: Internet of Things -->
+    <section class="py-20 bg-gradient-to-br from-indigo-900 via-slate-900 to-purple-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="relative group service-card">
+              <div class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-700"></div>
+              <div class="relative bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-8 border border-indigo-500/30">
+                <div class="space-y-6">
+                  <!-- IoT Architecture -->
+                  <div class="text-center mb-6">
+                    <i class="fas fa-wifi text-6xl text-indigo-400 mb-4"></i>
+                    <h4 class="text-white font-bold text-xl">IoT Ecosystem</h4>
+                  </div>
+
+                  <!-- IoT Components -->
+                  <div class="space-y-4">
+                    <div class="p-4 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-xl border border-indigo-500/20">
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-satellite-dish text-indigo-400 mr-3"></i>
+                        <h5 class="text-white font-semibold">Sensor Network</h5>
+                      </div>
+                      <p class="text-gray-300 text-sm">Temperature, pressure, vibration, dan sensor environmental monitoring</p>
+                    </div>
+
+                    <div class="p-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl border border-purple-500/20">
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-cloud text-purple-400 mr-3"></i>
+                        <h5 class="text-white font-semibold">Cloud Platform</h5>
+                      </div>
+                      <p class="text-gray-300 text-sm">Data storage, processing, dan analytics di cloud infrastructure</p>
+                    </div>
+
+                    <div class="p-4 bg-gradient-to-r from-pink-600/20 to-red-600/20 rounded-xl border border-pink-500/20">
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-mobile-alt text-pink-400 mr-3"></i>
+                        <h5 class="text-white font-semibold">Mobile Dashboard</h5>
+                      </div>
+                      <p class="text-gray-300 text-sm">Real-time monitoring dan control via smartphone/tablet</p>
+                    </div>
+
+                    <div class="p-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl border border-blue-500/20">
+                      <div class="flex items-center mb-2">
+                        <i class="fas fa-brain text-blue-400 mr-3"></i>
+                        <h5 class="text-white font-semibold">AI Analytics</h5>
+                      </div>
+                      <p class="text-gray-300 text-sm">Machine learning untuk predictive maintenance dan optimization</p>
+                    </div>
+                  </div>
+
+                  <!-- Performance Metrics -->
+                  <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center p-3 bg-indigo-900/30 rounded-lg">
+                      <div class="text-xl font-bold text-indigo-400 mb-1">1000+</div>
+                      <div class="text-gray-300 text-xs">Sensors</div>
+                    </div>
+                    <div class="text-center p-3 bg-purple-900/30 rounded-lg">
+                      <div class="text-xl font-bold text-purple-400 mb-1">Real-time</div>
+                      <div class="text-gray-300 text-xs">Analytics</div>
+                    </div>
+                    <div class="text-center p-3 bg-blue-900/30 rounded-lg">
+                      <div class="text-xl font-bold text-blue-400 mb-1">30%</div>
+                      <div class="text-gray-300 text-xs">Cost Reduction</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="order-1 lg:order-2 space-y-8">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
+                  <i class="fas fa-wifi text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h2 class="text-4xl font-bold bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">Internet of Things</h2>
+                  <p class="text-gray-400 text-lg">Smart Industrial Connectivity</p>
+                </div>
+              </div>
+              
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                Transformasi digital industri dengan implementasi IoT yang menghubungkan semua aset produksi dalam satu ekosistem terintegrasi. Dapatkan visibility lengkap terhadap operasi industri Anda dengan real-time monitoring, predictive analytics, dan automated decision making.
+              </p>
+            </div>
+
+            <!-- IoT Solutions -->
+            <div class="space-y-6">
+              <h3 class="text-xl font-bold text-white">Solusi IoT Industrial:</h3>
+              
+              <div class="space-y-4">
+                <div class="p-6 bg-gradient-to-r from-indigo-900/30 to-purple-900/30 rounded-xl border border-indigo-500/20">
+                  <h4 class="text-white font-bold mb-2 flex items-center">
+                    <i class="fas fa-chart-line text-indigo-400 mr-3"></i>
+                    Predictive Maintenance
+                  </h4>
+                  <p class="text-gray-300 text-sm mb-3">AI-powered analytics untuk prediksi kerusakan sebelum terjadi downtime</p>
+                  <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Vibration Analysis</span>
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Temperature Trend</span>
+                  </div>
+                </div>
+
+                <div class="p-6 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl border border-purple-500/20">
+                  <h4 class="text-white font-bold mb-2 flex items-center">
+                    <i class="fas fa-tachometer-alt text-purple-400 mr-3"></i>
+                    Energy Management
+                  </h4>
+                  <p class="text-gray-300 text-sm mb-3">Monitoring konsumsi energi real-time untuk optimasi efficiency</p>
+                  <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Power Monitoring</span>
+                    <span class="px-3 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">Load Balancing</span>
+                  </div>
+                </div>
+
+                <div class="p-6 bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-xl border border-blue-500/20">
+                  <h4 class="text-white font-bold mb-2 flex items-center">
+                    <i class="fas fa-shield-alt text-blue-400 mr-3"></i>
+                    Safety & Security
+                  </h4>
+                  <p class="text-gray-300 text-sm mb-3">Sistem keamanan terintegrasi dengan alert dan emergency response</p>
+                  <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Access Control</span>
+                    <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Emergency Alert</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-xl hover:from-indigo-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-wifi mr-3"></i>Konsultasi IoT
+                <i class="fas fa-arrow-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 6: Mechanical Design -->
+    <section class="py-20 bg-gradient-to-br from-pink-900 via-slate-900 to-rose-900 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mr-4">
+                  <i class="fas fa-drafting-compass text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h2 class="text-4xl font-bold bg-gradient-to-r from-pink-300 to-rose-300 bg-clip-text text-transparent">Mechanical Design</h2>
+                  <p class="text-gray-400 text-lg">Engineering Design Solutions</p>
+                </div>
+              </div>
+              
+              <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                Layanan desain mekanik profesional untuk custom machinery, jigs & fixtures, dan solusi engineering yang disesuaikan dengan kebutuhan spesifik industri Anda. Tim engineer berpengalaman menggunakan software CAD terdepan untuk menghasilkan desain yang optimal dan manufacturable.
+              </p>
+            </div>
+
+            <!-- Design Services -->
+            <div class="space-y-4">
+              <div class="p-6 bg-gradient-to-r from-pink-900/30 to-rose-900/30 rounded-xl border border-pink-500/20 hover:border-pink-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-robot text-pink-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Custom Machinery</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Desain mesin khusus sesuai requirement proses produksi dengan pertimbangan ergonomi dan safety.</p>
+              </div>
+
+              <div class="p-6 bg-gradient-to-r from-rose-900/30 to-red-900/30 rounded-xl border border-rose-500/20 hover:border-rose-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-wrench text-rose-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Jigs & Fixtures</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Tool desain untuk meningkatkan akurasi dan efisiensi proses manufacturing dan assembly.</p>
+              </div>
+
+              <div class="p-6 bg-gradient-to-r from-red-900/30 to-orange-900/30 rounded-xl border border-red-500/20 hover:border-red-400/40 transition-all duration-300">
+                <div class="flex items-center mb-3">
+                  <i class="fas fa-cog text-red-400 text-2xl mr-4"></i>
+                  <h4 class="text-xl font-bold text-white">Product Development</h4>
+                </div>
+                <p class="text-gray-300 ml-12">Dari konsep hingga prototype, pengembangan produk industrial dengan pendekatan systematic design.</p>
+              </div>
+            </div>
+
+            <!-- Design Software & Tools -->
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-white">Software & Tools:</h3>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="p-4 bg-pink-900/30 rounded-lg border border-pink-500/20 text-center">
+                  <i class="fas fa-cube text-pink-400 mb-2"></i>
+                  <h5 class="text-white font-semibold text-sm">SolidWorks</h5>
+                  <p class="text-gray-400 text-xs">3D CAD</p>
+                </div>
+                <div class="p-4 bg-rose-900/30 rounded-lg border border-rose-500/20 text-center">
+                  <i class="fas fa-drafting-compass text-rose-400 mb-2"></i>
+                  <h5 class="text-white font-semibold text-sm">AutoCAD</h5>
+                  <p class="text-gray-400 text-xs">2D Drawing</p>
+                </div>
+                <div class="p-4 bg-red-900/30 rounded-lg border border-red-500/20 text-center">
+                  <i class="fas fa-calculator text-red-400 mb-2"></i>
+                  <h5 class="text-white font-semibold text-sm">ANSYS</h5>
+                  <p class="text-gray-400 text-xs">FEA Analysis</p>
+                </div>
+                <div class="p-4 bg-orange-900/30 rounded-lg border border-orange-500/20 text-center">
+                  <i class="fas fa-industry text-orange-400 mb-2"></i>
+                  <h5 class="text-white font-semibold text-sm">Inventor</h5>
+                  <p class="text-gray-400 text-xs">Mechanical Design</p>
+                </div>
+                <div class="p-4 bg-yellow-900/30 rounded-lg border border-yellow-500/20 text-center">
+                  <i class="fas fa-project-diagram text-yellow-400 mb-2"></i>
+                  <h5 class="text-white font-semibold text-sm">CATIA</h5>
+                  <p class="text-gray-400 text-xs">Advanced Design</p>
+                </div>
+                <div class="p-4 bg-purple-900/30 rounded-lg border border-purple-500/20 text-center">
+                  <i class="fas fa-print text-purple-400 mb-2"></i>
+                  <h5 class="text-white font-semibold text-sm">CAM</h5>
+                  <p class="text-gray-400 text-xs">Manufacturing</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Design Process -->
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-white">Design Process:</h3>
+              <div class="space-y-3">
+                <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                  <div class="w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                  <span class="text-gray-300">Requirement Analysis & Specification</span>
+                </div>
+                <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                  <div class="w-8 h-8 bg-rose-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                  <span class="text-gray-300">Conceptual Design & 3D Modeling</span>
+                </div>
+                <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                  <div class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                  <span class="text-gray-300">Structural Analysis & Optimization</span>
+                </div>
+                <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                  <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</div>
+                  <span class="text-gray-300">Detail Drawing & Documentation</span>
+                </div>
+                <div class="flex items-center p-3 bg-slate-700/50 rounded-lg">
+                  <div class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">5</div>
+                  <span class="text-gray-300">Prototype & Testing</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-600 text-white font-bold rounded-xl hover:from-pink-400 hover:to-rose-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-drafting-compass mr-3"></i>Konsultasi Design
+                <i class="fas fa-arrow-right ml-3"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="order-2">
+            <div class="relative group service-card">
+              <div class="absolute -inset-2 bg-gradient-to-r from-pink-500 to-rose-600 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-700"></div>
+              <div class="relative bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-8 border border-pink-500/30">
+                <div class="space-y-6">
+                  <!-- Design Portfolio -->
+                  <div class="text-center mb-6">
+                    <i class="fas fa-drafting-compass text-6xl text-pink-400 mb-4"></i>
+                    <h4 class="text-white font-bold text-xl">Engineering Excellence</h4>
+                  </div>
+
+                  <!-- Design Capabilities -->
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-gradient-to-br from-pink-600/20 to-rose-600/20 rounded-xl border border-pink-500/20 text-center">
+                      <i class="fas fa-cube text-pink-400 text-2xl mb-2"></i>
+                      <h5 class="text-white font-semibold text-sm">3D Modeling</h5>
+                      <p class="text-gray-400 text-xs">Parametric Design</p>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-rose-600/20 to-red-600/20 rounded-xl border border-rose-500/20 text-center">
+                      <i class="fas fa-calculator text-rose-400 text-2xl mb-2"></i>
+                      <h5 class="text-white font-semibold text-sm">FEA Analysis</h5>
+                      <p class="text-gray-400 text-xs">Stress & Thermal</p>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-red-600/20 to-orange-600/20 rounded-xl border border-red-500/20 text-center">
+                      <i class="fas fa-print text-red-400 text-2xl mb-2"></i>
+                      <h5 class="text-white font-semibold text-sm">Prototyping</h5>
+                      <p class="text-gray-400 text-xs">3D Printing & CNC</p>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-orange-600/20 to-yellow-600/20 rounded-xl border border-orange-500/20 text-center">
+                      <i class="fas fa-file-alt text-orange-400 text-2xl mb-2"></i>
+                      <h5 class="text-white font-semibold text-sm">Documentation</h5>
+                      <p class="text-gray-400 text-xs">Technical Drawing</p>
+                    </div>
+                  </div>
+
+                  <!-- Project Stats -->
+                  <div class="bg-slate-700/50 rounded-xl p-6">
+                    <h5 class="text-white font-bold mb-4">Project Statistics:</h5>
+                    <div class="space-y-3">
+                      <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Custom Machines Designed:</span>
+                        <span class="text-pink-400 font-bold">50+</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Jigs & Fixtures:</span>
+                        <span class="text-rose-400 font-bold">200+</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Design Time Reduction:</span>
+                        <span class="text-red-400 font-bold">40%</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Client Satisfaction:</span>
+                        <span class="text-orange-400 font-bold">98%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Industry Applications -->
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="p-3 bg-pink-900/30 rounded-lg text-center">
+                      <i class="fas fa-car text-pink-400 mb-1"></i>
+                      <div class="text-white text-sm font-medium">Automotive</div>
+                    </div>
+                    <div class="p-3 bg-rose-900/30 rounded-lg text-center">
+                      <i class="fas fa-industry text-rose-400 mb-1"></i>
+                      <div class="text-white text-sm font-medium">Manufacturing</div>
+                    </div>
+                    <div class="p-3 bg-red-900/30 rounded-lg text-center">
+                      <i class="fas fa-shipping-fast text-red-400 mb-1"></i>
+                      <div class="text-white text-sm font-medium">Logistics</div>
+                    </div>
+                    <div class="p-3 bg-orange-900/30 rounded-lg text-center">
+                      <i class="fas fa-flask text-orange-400 mb-1"></i>
+                      <div class="text-white text-sm font-medium">Chemical</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute top-20 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-20 left-10 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
+      </div>
+
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-2 mb-8">
+            <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <span class="text-cyan-400 text-sm font-medium uppercase tracking-wider">Ready to Start?</span>
+          </div>
+
+          <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            Siap Mentransformasi <br class="hidden md:block">Industri Anda?
+          </h2>
+
+          <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Konsultasikan kebutuhan industri Anda dengan tim ahli TADI. Dapatkan solusi terbaik yang disesuaikan dengan budget dan timeline project Anda.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a href="tel:+628561182716" class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+              <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span class="relative flex items-center">
+                <i class="fas fa-phone mr-3"></i>
+                Konsultasi Gratis Sekarang
+                <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </a>
+
+            <a href="mailto:info@taditeknik.com" class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-cyan-400/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300">
+              <i class="fas fa-envelope mr-3"></i>
+              Email: info@taditeknik.com
+            </a>
+          </div>
+
+          <!-- Contact Info Cards -->
+          <div class="grid md:grid-cols-2 gap-6 mt-16 max-w-2xl mx-auto">
+            <div class="p-6 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl border border-purple-500/30 backdrop-blur-sm">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fas fa-user-tie text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold">Dean - Project Manager</h4>
+                  <p class="text-gray-400 text-sm">Project Planning & Consultation</p>
+                </div>
+              </div>
+              <a href="tel:+628561182716" class="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors flex items-center">
+                <i class="fas fa-phone mr-2"></i>
+                +62 856 1182 716
+              </a>
+            </div>
+
+            <div class="p-6 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl border border-cyan-500/30 backdrop-blur-sm">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-xl flex items-center justify-center mr-3">
+                  <i class="fas fa-cogs text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold">Abdul - Technical Lead</h4>
+                  <p class="text-gray-400 text-sm">Technical Support & Engineering</p>
+                </div>
+              </div>
+              <a href="tel:+6281553361953" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors flex items-center">
+                <i class="fas fa-phone mr-2"></i>
+                +62 815 5336 1953
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 border-t border-slate-700">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                <img src="/img/TADI Color (Text Alt) - Transparent.png" alt="TADI Logo">
+              </div>
+              <span class="text-xl text-white font-semibold">TADI</span>
+            </div>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              PT. Teknik Andalan Digitalisasi Indonesia - Solusi terdepan untuk otomasi industri, fabrikasi sparepart, dan digitalisasi proses manufaktur dengan standar internasional.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white hover:bg-purple-500 transition-colors">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:info@taditeknik.com" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="tel:+628561182716" class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-white font-bold mb-4">Layanan Kami</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white transition-colors">Sparepart Industri</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Pengadaan Mesin</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">PLC Systems</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">IoT Solutions</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Mechanical Design</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li>
+              <li><a href="services.html" class="hover:text-white transition-colors">Layanan</a></li>
+              <li><a href="index.html#about" class="hover:text-white transition-colors">Tentang Kami</a></li>
+              <li><a href="index.html#contact" class="hover:text-white transition-colors">Hubungi Kami</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-700 mt-12 pt-8 text-center">
+          <p class="text-gray-400 text-sm">
+            © 2024 PT. Teknik Andalan Digitalisasi Indonesia. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add scroll effects
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('nav');
+        if (window.scrollY > 100) {
+          navbar.classList.add('bg-gray-900/95');
+          navbar.classList.remove('bg-gray-800/95');
+        } else {
+          navbar.classList.add('bg-gray-800/95');
+          navbar.classList.remove('bg-gray-900/95');
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+      });
+
+      // Hero section immediately visible
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        heroSection.style.opacity = '1';
+        heroSection.style.transform = 'translateY(0)';
+      }
+    </script>
+
+</body>
+</html>
