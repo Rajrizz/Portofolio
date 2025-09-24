@@ -228,7 +228,7 @@
       }
     </style>
   </head>
-  <body class="font-poppins smooth overflow-x-hidden">
+  <body class="font-poppins smooth overflow-x-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-gray-800 backdrop-blur shadow-white shadow-sm transition-all duration-300" id="navbar">
       <div class="container mx-auto px-4 py-4">
@@ -246,7 +246,7 @@
             <a href="#home" class="text-purple-600 font-medium">Beranda</a>
             <a href="service.html" class="text-white hover:text-purple-600 font-medium flex items-center"> Layanan </a>
             <div class="relative group">
-              <a href="#services" class="text-white hover:text-purple-600 font-medium flex items-center"> Tentang Kami <i class="fas fa-chevron-down ml-1 text-xs"></i> </a>
+              <a href="#services" class="text-white hover:text-purple-600 font-medium flex items-center"> Tentang Kami</a>
               <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Visi & Misi</a>
@@ -1219,8 +1219,8 @@
               </div>
             </div>
             <div class="mt-4 p-3 bg-gradient-to-r from-green-900/30 to-teal-900/30 rounded-xl border border-green-500/20">
-              <p class="text-sm text-gray-300 flex items-center">
-                <div class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+              <p class="text-white text-sm flex items-center">
+                <span class="w-2 h-2 bg-green-400  rounded-full mr-2 animate-pulse"></span>
                 Emergency Support 24/7 untuk klien prioritas
               </p>
             </div>
@@ -1243,97 +1243,72 @@
           </div>
 
           <!-- Contact Form -->
-          <form class="space-y-6" id="contact-form">
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-medium text-gray-300 mb-2">Nama Lengkap</label>
-                <input 
-                  type="text" 
-                  required
-                  class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-300 mb-2">Perusahaan</label>
-                <input 
-                  type="text" 
-                  class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
-                  placeholder="PT. Contoh Industri"
-                />
-              </div>
-            </div>
+          <form class="space-y-6" id="contact-form" action="process_form.php" method="POST">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-sm font-medium text-gray-300 mb-2">Nama Lengkap</label>
+      <input type="text" name="nama" required placeholder="John Doe"
+        class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                  placeholder="John Doe" />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-300 mb-2">Perusahaan</label>
+      <input type="text" name="perusahaan" placeholder="PT. Contoh Industri"
+        class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
+                  placeholder="PT. Contoh Industri" />
+    </div>
+  </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                <input 
-                  type="email" 
-                  required
-                  class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
-                  placeholder="john@perusahaan.com"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-300 mb-2">No. Telepon</label>
-                <input 
-                  type="tel" 
-                  required
-                  class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all duration-300"
-                  placeholder="+62 812 3456 7890"
-                />
-              </div>
-            </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+      <input type="email" name="email" required placeholder="john@perusahaan.com"
+        class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                  placeholder="john@perusahaan.com" />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700">No. Telepon</label>
+      <input type="tel" name="telepon" required placeholder="+62 812 3456 7890"
+        class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all duration-300"
+                  placeholder="+62 812 3456 7890" />
+    </div>
+  </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Layanan yang Dibutuhkan</label>
-              <select class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all duration-300">
-                <option value="">Pilih layanan...</option>
-                <option value="sparepart">Sparepart Industri</option>
-                <option value="pengadaan">Pengadaan & Perawatan Mesin</option>
-                <option value="kebutuhan">Kebutuhan Industri</option>
-                <option value="plc">PLC Systems</option>
-                <option value="iot">Internet of Things</option>
-                <option value="design">Mechanical Design</option>
-                <option value="konsultasi">Konsultasi Umum</option>
-              </select>
-            </div>
+  <div>
+    <label class="block text-sm font-medium text-gray-300 mb-2">Layanan</label>
+    <select name="layanan" required
+      class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all duration-300">
+      <option value="">Pilih layanan...</option>
+      <option value="sparepart">Sparepart Industri</option>
+      <option value="pengadaan">Pengadaan & Perawatan Mesin</option>
+      <option value="kebutuhan">Kebutuhan Industri</option>
+      <option value="plc">PLC Systems</option>
+      <option value="iot">Internet of Things</option>
+      <option value="design">Mechanical Design</option>
+      <option value="konsultasi">Konsultasi Umum</option>
+    </select>
+  </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Deskripsi Kebutuhan</label>
-              <textarea 
-                rows="4" 
-                required
-                class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all duration-300 resize-none"
-                placeholder="Jelaskan secara detail kebutuhan industri Anda, spesifikasi teknis yang diinginkan, timeline proyek, atau pertanyaan lainnya..."
-              ></textarea>
-            </div>
+  <div>
+    <label class="block text-sm font-medium text-gray-300 mb-2">Deskripsi Kebutuhan</label>
+    <textarea name="deskripsi" rows="4" required
+      class="w-full px-4 py-3 bg-slate-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all duration-300 resize-none"
+                placeholder="Jelaskan secara detail kebutuhan industri Anda, spesifikasi teknis yang diinginkan, timeline proyek, atau pertanyaan lainnya..."></textarea>
+  </div>
 
-            <div class="flex items-center">
-              <input type="checkbox" id="privacy" class="mr-3 w-4 h-4 text-cyan-400 bg-slate-700 border-gray-600 rounded focus:ring-cyan-400 focus:ring-2">
-              <label for="privacy" class="text-sm text-gray-300">
-                Saya setuju dengan <a href="#" class="text-cyan-400 hover:text-cyan-300">kebijakan privasi</a> dan bersedia dihubungi oleh tim TADI
-              </label>
-            </div>
+  <button type="submit"
+    class="group w-full bg-gradient-to-r from-purple-600 via-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold hover:from-purple-500 hover:via-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-2xl relative overflow-hidden">
+    Kirim Permintaan Konsultasi
+  </button>
 
-            <button 
-              type="submit" 
-              class="group w-full bg-gradient-to-r from-purple-600 via-cyan-600 to-blue-600 text-white py-4 rounded-xl font-bold hover:from-purple-500 hover:via-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-2xl relative overflow-hidden"
-            >
-              <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-cyan-600 to-blue-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span class="relative flex items-center justify-center">
-                <i class="fas fa-paper-plane mr-3 group-hover:translate-x-1 transition-transform"></i>
-                Kirim Permintaan Konsultasi
-                <i class="fas fa-sparkles ml-3 group-hover:rotate-12 transition-transform"></i>
-              </span>
-            </button>
-          </form>
+
+
 
         </div>
       </div>
 
     </div>
-
+</form>
     <!-- Bottom CTA Banner -->
     <div class="mt-20">
       <div class="relative group">
